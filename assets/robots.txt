@@ -1,0 +1,3 @@
+# We prevent search engines to look this app directly, as it should works only via web app proxy
+User-Agent: *
+Disallow: /

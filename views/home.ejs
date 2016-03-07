@@ -1,0 +1,8 @@
+<h1 class="text-xs-center">Последние статьи</h1>
+<ul>
+  <% stories.forEach(function(story){ %>
+  <li>
+    <a href="/s/<%= story.slug %>"><%= story.title %></a>
+  </li>
+  <% }); %>
+</ul>

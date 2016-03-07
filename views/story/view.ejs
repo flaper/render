@@ -1,0 +1,7 @@
+<div class="container" itemscope itemtype="http://schema.org/Article">
+  <div itemprop="author"><%= user.displayName %></div>
+  <div itemprop="datePublished" content="<%= story.created %>"> <%= story.created %></div>
+  <h1 itemprop="name"><%= story.title %></h1>
+
+  <div itemprop="text"><%- story.contentHTML %></div>
+</div>
