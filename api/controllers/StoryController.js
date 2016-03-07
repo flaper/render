@@ -9,7 +9,7 @@ module.exports = {
   view: function (req, res) {
     var slug = req.param('slug').toLowerCase();
     Story.find({slugLowerCase: slug, status: 'active'}).then(function (stories) {
-      if (!stories) {
+      if (!stories.length) {
         return res.notFound();
       } else {
         var story = stories[0];
