@@ -32,6 +32,10 @@
   <!-- base url -->
   <base href="/">
 
+  <link rel="stylesheet" href="/assets/bower/bootstrap-social/bootstrap-social.css">
+  <link rel="stylesheet" href="/assets/bower/dropzone/dist/min/basic.min.css">
+  <link rel="stylesheet" href="/assets/bower/dropzone/dist/min/dropzone.min.css">
+
 </head>
 <body>
 
@@ -42,21 +46,10 @@
   <%- body %>
 </app>
 
-<!-- Common files to be cached -->
-<script src="/__build__/common.js"></script>
-<!-- Vendor files -->
-<script src="/__build__/vendor.js"></script>
-<!-- App script -->
-<script src="/__build__/app.js"></script>
-<link rel="stylesheet" href="bower/bootstrap-social/bootstrap-social.css">
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="/js/common.js"></script>
-<script src="/bower/tether/dist/js/tether.min.js"></script>
-<script src="/bower/bootstrap/dist/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="/bower/dropzone/dist/min/basic.min.css">
-<link rel="stylesheet" href="/bower/dropzone/dist/min/dropzone.min.css">
-
+<script src="/assets/js/common.js"></script>
+<script src="/assets/bower/tether/dist/js/tether.min.js"></script>
+<script src="/assets/bower/bootstrap/dist/js/bootstrap.min.js"></script>
 
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
@@ -93,5 +86,6 @@
   <div><img src="https://mc.yandex.ru/watch/34469330" style="position:absolute; left:-9999px;" alt=""/></div>
 </noscript>
 <!-- /Yandex.Metrika counter -->
+<script src="vendor.bundle.js"></script><script src="main.bundle.js"></script></body>
 </body>
 </html>
