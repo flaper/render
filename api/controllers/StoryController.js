@@ -22,7 +22,7 @@ module.exports = {
           story = stories[0];
         }
       })
-      .then(() => Comment.find({subjectId: story.id, status: 'active'}))
+      .then(() => Comment.find({subjectId: story.id, status: 'active'}).sort('created DESC'))
       .then((data) => comments = data)
       .then(() => {
         let userIds = comments.map(comment => comment.userId.toString());
