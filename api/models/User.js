@@ -11,6 +11,9 @@ module.exports = {
   attributes: {
     displayName: {
       type: 'string'
+    },
+    photo: {
+      type: 'string'
     }
   }
 };

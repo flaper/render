@@ -1,7 +1,31 @@
 <div class="container" itemscope itemtype="http://schema.org/Article">
+  <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+    <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+      <meta itemprop="url" content="http://flaper.org/assets/favicon/apple-icon-60x60.png">
+      <meta itemprop="width" content="60">
+      <meta itemprop="height" content="60">
+    </div>
+    <meta itemprop="name" content="Флапер">
+  </div>
+
   <div itemprop="author"><%= user.displayName %></div>
-  <div itemprop="datePublished" content="<%= story.created %>"> <%= story.created %></div>
+  <div itemprop="datePublished"><%= story.created %></div>
+  <div itemprop="dateModified" content="<%= story.updated %>"></div>
+
   <h1 itemprop="name"><%= story.title %></h1>
 
+  <div itemprop="headline" content="<%= story.title %>"></div>
+
   <div itemprop="text"><%- story.contentHTML %></div>
+  <div class="comments">
+    <div itemprop="commentCount" content="<%= comments.length %>"></div>
+
+    <% comments.forEach(function(comment){ %>
+    <div itemprop="Comment" itemscope itemtype="http://schema.org/Comment">
+      <div itemprop="datePublished"><%= comment.created %></div>
+      <div itemprop="author"><%= users[comment.userId].displayName %></div>
+      <div itemprop="text"><%= comment.content %></div>
+    </div>
+    <% }); %>
+  </div>
 </div>

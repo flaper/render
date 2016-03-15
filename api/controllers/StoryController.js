@@ -1,3 +1,5 @@
+"use strict";
+var _ = require('lodash');
 /**
  * StoryController
  *
@@ -7,18 +9,42 @@
 
 module.exports = {
   view: function (req, res) {
-    var slug = req.param('slug').toLowerCase();
-    Story.find({slugLowerCase: slug, status: 'active'}).then(function (stories) {
-      if (!stories.length) {
-        return res.notFound();
-      } else {
-        var story = stories[0];
-        return User.find({id:  story.userId.toString()}).then(function (users) {
-          var user = users[0];
-          return res.view('story/view', {story: story, user: user, title: story.title});
-        })
-      }
-    });
+    let slug = req.param('slug').toLowerCase();
+    let story = null;
+    let comments = [];
+    let users = {};
+    Story.find({slugLowerCase: slug, status: 'active'})
+      .then((stories) => {
+        if (!stories.length) {
+          res.notFound();
+          return Promise.reject();
+        } else {
+          story = stories[0];
+        }
+      })
+      .then(() => Comment.find({subjectId: story.id, status: 'active'}))
+      .then((data) => comments = data)
+      .then(() => {
+        let userIds = comments.map(comment => comment.userId.toString());
+        userIds.push(story.userId.toString());
+        userIds = _.uniq(userIds);
+        return User.find({id: userIds})
+      })
+      .then((data) => {
+        users = _.keyBy(data, 'id');
+      })
+      .then(() => {
+        return res.view('story/view', {
+          story: story,
+          user: users[story.userId],
+          title: story.title,
+          comments: comments,
+          users: users
+        });
+      })
+      .catch(() => {
+        //nothing
+      })
   }
 };
 

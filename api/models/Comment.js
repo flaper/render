@@ -1,20 +1,20 @@
 module.exports = {
-  tableName: 'Story',
+  tableName: 'Comment',
 
   attributes: {
     status: {
       type: 'string'
     },
     userId :{
+      type: 'string'
+    },
+    subjectId :{
       type: 'ObjectId'
     },
-    title: {
+    subjectType :{
       type: 'string'
     },
-    contentHTML: {
-      type: 'string'
-    },
-    slugLowerCase: {
+    content: {
       type: 'string'
     },
     created: {
