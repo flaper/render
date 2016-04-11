@@ -38,7 +38,7 @@ module.exports = {
           story: story,
           user: users[story.userId],
           title: story.title,
-          metaDescription: story.shortInline,
+          metaDescription: story.shortText,
           comments: comments,
           users: users
         });
