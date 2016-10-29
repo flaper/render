@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,700' rel='stylesheet' type='text/css'>
-  <title><%=typeof title == 'undefined' ? 'Флапер' : title%></title>
+  <title><%=typeof title == 'undefined' ? 'Флап' : title%></title>
   <% if (typeof metaDescription !=='undefined'){ %>
   <meta name="description" content="<%= metaDescription%>">
   <% }%>
@@ -34,6 +34,7 @@
   <!-- base url -->
   <base href="/">
 
+  <link rel="stylesheet" href="/assets/css/preload.css">
   <link rel="stylesheet" href="/assets/bower/bootstrap-social/bootstrap-social.css">
   <link rel="stylesheet" href="/assets/bower/dropzone/dist/min/basic.min.css">
   <link rel="stylesheet" href="/assets/bower/dropzone/dist/min/dropzone.min.css">
@@ -43,7 +44,7 @@
 
 <app>
   <div>
-    <a class="btn btn-default" href="/">Флапер</a>
+    <a class="btn btn-default" href="/">Флап</a>
   </div>
   <%- body %>
 </app>
@@ -52,6 +53,6 @@
 
 <script type="text/javascript" src="https://yastatic.net/share2/share.js" charset="utf-8"></script>
 
-<script src="polyfills.bundle.js"></script><script src="global.bundle.js"></script><script src="main.css.bundle.js"></script><script src="vendor.bundle.js"></script><script src="angular.bundle.js"></script><script src="angular_vendor.bundle.js"></script><script src="main.bundle.js"></script>
+<script src="polyfills.bundle.js"></script><script src="global.bundle.js"></script><script src="main_css.bundle.js"></script><script src="vendor.bundle.js"></script><script src="angular.bundle.js"></script><script src="angular_vendor.bundle.js"></script><script src="main.bundle.js"></script>
 </body>
 </html>
