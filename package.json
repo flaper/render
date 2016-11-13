@@ -6,6 +6,7 @@
   "keywords": [],
   "dependencies": {
     "ejs": "2.3.4",
+    "grunt": "^1.0.1",
     "include-all": "~0.1.6",
     "lodash": "^4.6.1",
     "rc": "1.0.1",
