@@ -5,6 +5,7 @@
   "description": "Flaper render application",
   "keywords": [],
   "dependencies": {
+    "co": "^4.6.0",
     "ejs": "2.3.4",
     "grunt": "^1.0.1",
     "include-all": "~0.1.6",
